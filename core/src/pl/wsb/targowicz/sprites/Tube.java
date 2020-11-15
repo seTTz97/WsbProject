@@ -8,9 +8,9 @@ import java.util.Random;
 
 public class Tube {
     public static final int TUBE_WIDTH = 52; //width of tube texture(used for spacing tubes on playstate)
-    private static final int TUBE_GAP = 100; //opening between tubes
+    private static final int TUBE_GAP = 100; //space between tubes
     private static final int LOWEST_OPENING = 120; //lowest position the top of the bottom tube can be, must be above 90 to be above ground level
-    private static final int FLUCTUATION = 130; //may adjust to keep top tube in view
+    private static final int FLUCTUATION = 130;
 
     private Texture topTube, bottomTube;
     private Vector2 posTopTube, posBottomTube;
@@ -59,6 +59,7 @@ public class Tube {
     public void setPosBottomTube(Vector2 posBottomTube) {
         this.posBottomTube = posBottomTube;
     }
+   //reposition tubes
     public void reposition(float x){
         posTopTube.set(x, rand.nextInt(FLUCTUATION) + LOWEST_OPENING + TUBE_GAP);
         posBottomTube.set(x, posTopTube.y - TUBE_GAP - bottomTube.getHeight());

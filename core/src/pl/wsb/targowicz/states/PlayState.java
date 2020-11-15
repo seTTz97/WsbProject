@@ -33,7 +33,7 @@ public class PlayState extends State {
         background = new Texture("bg.png");
         ground = new Texture("ground.png");
         gameoverImg = new Texture("gameover.png");
-
+        //arr of tubes to use in game
         tubes = new Array<Tube>();
         for(int i = 1; i <= TUBE_COUNT; i++)
             tubes.add(new Tube(i * (TUBE_SPACING + Tube.TUBE_WIDTH)));
@@ -51,7 +51,7 @@ public class PlayState extends State {
                 bird.jump();
         }
     }
-
+    // same update using delta time
     @Override
     public void update(float dt) {
         handleInput();
@@ -82,7 +82,7 @@ public class PlayState extends State {
             groundPos2.add(ground.getWidth() * 2, 0);
 
     }
-
+    //sb file contains actual state of game, these are big files may contain a lot of information like background, tubes etc.
     @Override
     public void render(SpriteBatch sb) {
         // drawing

@@ -23,7 +23,7 @@ public class Animation {
         maxFrameTime = cycleTime / frameCount;
         frame = 0;
     }
-
+    // again updating using delta time
     public void update(float dt){
         currentFrameTime += dt;
         if(currentFrameTime > maxFrameTime){

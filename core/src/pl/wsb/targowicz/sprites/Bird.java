@@ -26,7 +26,7 @@ public class Bird {
         bounds = new Rectangle(x, y, texture.getWidth()/3, texture.getHeight());
         colliding = false;
     }
-
+    // updating bird using delta time
     public void update(float dt){
         birdAnimation.update(dt);
         velocity.add(0, GRAVITY, 0);
